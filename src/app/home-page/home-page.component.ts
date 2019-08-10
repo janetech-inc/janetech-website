@@ -4,7 +4,9 @@ import {
   AfterViewInit,
   ElementRef,
   OnInit,
-  OnDestroy } from '@angular/core';
+  OnDestroy, 
+  Inject
+} from '@angular/core';
 import { HostListener } from "@angular/core";
 import { debounceTime } from "rxjs/operators";
 import { Subject } from 'rxjs/internal/Subject';
@@ -13,7 +15,7 @@ import { Subject } from 'rxjs/internal/Subject';
     selector: 'app-home',
     templateUrl: './home-page.component.html',
     styleUrls: ['./home-page.component.scss'],
-    providers: [{ provide: Window, useValue: window }]
+    providers: [{ provide: 'Window', useValue: window }]
   })
 
 export class HomePageComponent implements OnInit, OnDestroy, AfterViewInit {
@@ -30,7 +32,8 @@ export class HomePageComponent implements OnInit, OnDestroy, AfterViewInit {
   private connectContainerOffSetTop: number;
   private pageYOffsetSubject = new Subject<number>();
 
-  constructor(private window: Window) {}
+  constructor(@Inject('Window') private window: Window) {
+  }
 
   @HostListener("window:scroll", [])
   onWindowScroll() {
