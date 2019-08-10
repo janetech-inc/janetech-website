@@ -7,7 +7,7 @@ orbs:
   aws-ecs: circleci/aws-ecs@0.0.8
 
 defaults: &defaults
-  working_directory: ~/catalog-svc
+  working_directory: ~/jt-web
   docker:
     - image: circleci/openjdk:11.0.3-stretch
       environment:
@@ -25,13 +25,13 @@ jobs:
           account-url: AWS_ECR_ACCOUNT_URL
           aws-access-key-id: AWS_ACCESS_KEY_ID
           aws-secret-access-key: AWS_SECRET_ACCESS_KEY
-          repo: "${AWS_RESOURCE_NAME_PREFIX}"
+          repo: "${AWS_RESOURCE_NAME_PREFIX}-int"
           region: AWS_DEFAULT_REGION
           tag: "${CIRCLE_SHA1}"
       - aws-ecs/update-service:
-          family: "${AWS_RESOURCE_NAME_PREFIX}-service"
-          cluster-name: "${AWS_RESOURCE_NAME_PREFIX}-cluster"
-          container-image-name-updates: "container=${AWS_RESOURCE_NAME_PREFIX}-service,image-and-tag=${AWS_ECR_ACCOUNT_URL}/${AWS_RESOURCE_NAME_PREFIX}:${CIRCLE_SHA1}"
+          family: "${AWS_RESOURCE_NAME_PREFIX}-service-int"
+          cluster-name: "${AWS_RESOURCE_NAME_PREFIX}-cluster-int"
+          container-image-name-updates: "container=${AWS_RESOURCE_NAME_PREFIX}-service-int,image-and-tag=${AWS_ECR_ACCOUNT_URL}/${AWS_RESOURCE_NAME_PREFIX}-int:${CIRCLE_SHA1}"
           verify-revision-is-deployed: true
 
 workflows:
