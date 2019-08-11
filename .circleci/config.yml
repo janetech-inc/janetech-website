@@ -9,9 +9,8 @@ orbs:
 defaults: &defaults
   working_directory: ~/jt-web
   docker:
-    - image: circleci/openjdk:11.0.3-stretch
-      environment:
-        - SBT_VERSION: 1.2.8
+    - image: circleci/node:stretch
+
 
 jobs:
   deploy:

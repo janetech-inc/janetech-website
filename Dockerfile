@@ -17,6 +17,7 @@ COPY . .
 # ~~~
 
 # ~~~ Build the project
+RUN PATH=$(npm bin):$PATH
 RUN npm run build
 # ~~~
 
