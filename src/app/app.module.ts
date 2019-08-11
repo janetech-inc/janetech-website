@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { HomePageComponent } from './home-page/home-page.component';
+import { NgtUniversalModule } from '@ng-toolkit/universal';
 
 @NgModule({
   declarations: [
@@ -12,9 +13,10 @@ import { HomePageComponent } from './home-page/home-page.component';
     HomePageComponent
   ],
   imports: [
-    BrowserModule,
+    BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
-    CoreModule
+    CoreModule,
+    NgtUniversalModule
   ],
   providers: [],
   bootstrap: [AppComponent]
