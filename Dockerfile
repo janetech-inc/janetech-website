@@ -1,7 +1,7 @@
 FROM node:alpine
 
 ENV NODE_ENV production
-ENV PORT 3000
+ENV PORT 4100
 
 # ~~~ Bundle app source
 WORKDIR /usr/src/app
@@ -18,7 +18,7 @@ COPY . .
 
 # ~~~ Build the project
 RUN PATH=$(npm bin):$PATH
-RUN npm run build
+RUN npm run build:ssr
 # ~~~
 
 # ~~~ Run command
