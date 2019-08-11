@@ -8,6 +8,9 @@ orbs:
 
 defaults: &defaults
   working_directory: ~/jt-web
+  docker:
+    - image: circleci/node:stretch
+
 
 jobs:
   deploy:
