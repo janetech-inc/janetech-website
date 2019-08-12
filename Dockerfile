@@ -18,14 +18,14 @@ COPY . .
 
 
 # ~~~ Build the project
+RUN mkdir ./dist
+WORKDIR ./dist
 RUN PATH=$(npm bin):$PATH
 RUN npm run build:ssr
 # ~~~
 
 # ~~~ Copying dist files, from previous stage
-COPY . .
-COPY server* ./dist/
-COPY browser* ./dist/
+COPY . ./dist
 # ~~~
 
 # ~~~ Run command
