@@ -23,7 +23,9 @@ RUN npm run build:ssr
 # ~~~
 
 # ~~~ Copying dist files, from previous stage
-COPY server* ./dist
+COPY . .
+COPY server* ./dist/
+COPY browser* ./dist/
 # ~~~
 
 # ~~~ Run command
