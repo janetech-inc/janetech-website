@@ -16,13 +16,18 @@ RUN npm install
 COPY . .
 # ~~~
 
+
 # ~~~ Build the project
 RUN PATH=$(npm bin):$PATH
 RUN npm run build:ssr
 # ~~~
 
+# ~~~ Copying dist files
+COPY dist .
+# ~~~
+
 # ~~~ Run command
 EXPOSE ${PORT}
-CMD [ "npm", "start" ]
+CMD [ "npm", "run", "serve:ssr" ]
 # ~~~
 
