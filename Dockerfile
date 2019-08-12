@@ -23,7 +23,7 @@ RUN npm run build:ssr
 # ~~~
 
 # ~~~ Copying dist files
-COPY dist .
+COPY . .
 # ~~~
 
 # ~~~ Run command
