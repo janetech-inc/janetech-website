@@ -23,7 +23,7 @@ RUN npm run build:ssr
 # ~~~
 
 # ~~~ Copying dist files, from previous stage
-VOLUME  /usr/src/app
+COPY server* ./dist
 # ~~~
 
 # ~~~ Run command
