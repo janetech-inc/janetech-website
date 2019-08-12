@@ -22,8 +22,8 @@ RUN PATH=$(npm bin):$PATH
 RUN npm run build:ssr
 # ~~~
 
-# ~~~ Copying dist files
-COPY dist/ dist/
+# ~~~ Copying dist files, from previous stage
+COPY /usr/src/app/dist ./dist
 # ~~~
 
 # ~~~ Run command
