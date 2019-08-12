@@ -21,10 +21,6 @@ RUN PATH=$(npm bin):$PATH
 RUN npm run build:ssr
 # ~~~
 
-# ~~~ Copying dist files, from previous stage
-COPY . /user/src/app
-# ~~~
-
 # ~~~ Run command
 EXPOSE ${PORT}
 CMD [ "npm", "run", "serve:ssr" ]
