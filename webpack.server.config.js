@@ -28,6 +28,7 @@ module.exports = {
         test: /(\\|\/)@angular(\\|\/)core(\\|\/).+\.js$/,
         parser: { system: true },
       },
+
     ]
   },
   plugins: [

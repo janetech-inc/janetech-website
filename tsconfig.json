@@ -19,6 +19,16 @@
       "dom"
     ]
   },
+  "exclude": [
+    "../../node_modules",
+    "node_modules",
+    "src/test.ts",
+    "dist",
+    "e2e",
+    "lib",
+    "webpack.config.js",
+    "terminalProcess.ts"
+  ],
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
     "strictInjectionParameters": true
