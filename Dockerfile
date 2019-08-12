@@ -23,7 +23,6 @@ RUN npm run build:ssr
 
 # ~~~ Copying dist files, from previous stage
 COPY . /user/src/app
-COPY ./dist /usr/src/app/dist
 # ~~~
 
 # ~~~ Run command
