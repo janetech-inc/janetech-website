@@ -16,16 +16,14 @@ RUN npm install
 COPY . .
 # ~~~
 
-
 # ~~~ Build the project
-RUN mkdir ./dist
-WORKDIR ./dist
 RUN PATH=$(npm bin):$PATH
 RUN npm run build:ssr
 # ~~~
 
 # ~~~ Copying dist files, from previous stage
-COPY . ./dist
+COPY . /user/src/app
+COPY ./dist /usr/src/app/dist
 # ~~~
 
 # ~~~ Run command
