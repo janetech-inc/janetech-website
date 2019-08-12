@@ -1,10 +1,10 @@
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
-import { AppComponent } from './app.component';
+import { AppComponent } from '../../src/app/app.component';
 
-import { NavComponent } from './core/components/nav/nav.component'
-import { HeaderComponent } from './core/components/header/header.component'
-import { FooterComponent } from './core/components/footer/footer.component'
+import { NavComponent } from '../../src/app/core/components/nav/nav.component'
+import { HeaderComponent } from '../../src/app/core/components/header/header.component'
+import { FooterComponent } from '../../src/app/core/components/footer/footer.component'
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
