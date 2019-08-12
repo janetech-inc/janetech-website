@@ -6,7 +6,6 @@ ENV PORT 4100
 # ~~~ Bundle app source
 WORKDIR /usr/src/app
 COPY package*.json ./
-COPY src ./
 # ~~~
 
 # ~~~ Install app dependencies
@@ -19,8 +18,8 @@ COPY . .
 
 # ~~~ Build the project
 RUN PATH=$(npm bin):$PATH
-
-
+RUN rm -rf ./node-modules
+RUN rm -rf ./e2e
 RUN npm run build:ssr
 # ~~~
 
