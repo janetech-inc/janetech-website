@@ -50,10 +50,10 @@ export class HomePageComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   ngOnInit(): void {
-    this.scrollObservable = this.pageYOffsetSubject
-      .asObservable()
-      .pipe(debounceTime(10))
-      .subscribe((e:number) => this.onWindowScrollEvent(e));
+    // this.scrollObservable = this.pageYOffsetSubject
+    //   .asObservable()
+    //   .pipe(debounceTime(10))
+    //   .subscribe((e:number) => this.onWindowScrollEvent(e));
   }
 
   ngOnDestroy(): void {
