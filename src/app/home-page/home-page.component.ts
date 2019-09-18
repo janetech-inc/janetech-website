@@ -63,8 +63,8 @@ export class HomePageComponent implements OnInit, OnDestroy, AfterViewInit {
   }
 
   ngAfterViewInit(): void {
-    this.copyContainerOffSetTop = this.copyContainer.nativeElement.offsetTop;
-    this.connectContainerOffSetTop = this.connectContainer.nativeElement.offsetTop;
+    // this.copyContainerOffSetTop = this.copyContainer.nativeElement.offsetTop;
+    // this.connectContainerOffSetTop = this.connectContainer.nativeElement.offsetTop;
   }
 
   // TODO create a fade in when in view component!
