@@ -72,8 +72,6 @@ export class HomePageComponent implements OnInit, OnDestroy, AfterViewInit {
 
   public onSubmit(form: NgForm): void {
     this.submitted = true;
-    console.log("submitted form: ", form);
-
     this.contactForm.reset();
   }
 
