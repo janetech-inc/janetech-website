@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { CoreModule } from './core/core.module';
 import { HomePageComponent } from './home-page/home-page.component';
 import { NgtUniversalModule } from '@ng-toolkit/universal';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { NgtUniversalModule } from '@ng-toolkit/universal';
     BrowserModule.withServerTransition({ appId: 'serverApp' }),
     AppRoutingModule,
     CoreModule,
-    NgtUniversalModule
+    NgtUniversalModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

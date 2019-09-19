@@ -1,12 +1,28 @@
 .footer {
+    background: #1b1b1b;
     position: sticky;
     z-index: 1;
     width: 100%;
     text-align: center;
-    padding-bottom: 18px;
+    padding: 25px 0;
 
     .footer-content {
-        color: #FFF;
-        font-size: 16px;
+        color: #6b6b6b;
+        font-size: 12px;
+        display: flex;
+        justify-content: center;
+        
+        a {
+            padding: 0 20px;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #ffffff;
+        }
+    
+        a:visited {
+            color: #6b6b6b;
+          }
     }
 }
