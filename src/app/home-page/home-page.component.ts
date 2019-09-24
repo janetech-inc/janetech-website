@@ -12,6 +12,7 @@ import { WINDOW } from "@ng-toolkit/universal";
 import { HostListener } from "@angular/core";
 import { debounceTime } from "rxjs/operators";
 import { Subject } from 'rxjs/internal/Subject';
+import { NgForm } from '@angular/forms';
 
 import { isPlatformBrowser} from '@angular/common';
 
@@ -26,9 +27,11 @@ export class HomePageComponent implements OnInit, OnDestroy, AfterViewInit {
   public isSticky: boolean = false;
   public copyInview: boolean = false;
   public connectInview: boolean = false;
+  public submitted: boolean = false;
 
   @ViewChild('copyContainer', {static: false}) copyContainer: ElementRef;
   @ViewChild('connectContainer', {static: false}) connectContainer: ElementRef;
+  @ViewChild('f', {'static': false}) contactForm: NgForm;
 
   private scrollObservable;
   private copyContainerOffSetTop: number;
@@ -65,6 +68,11 @@ export class HomePageComponent implements OnInit, OnDestroy, AfterViewInit {
   ngAfterViewInit(): void {
     // this.copyContainerOffSetTop = this.copyContainer.nativeElement.offsetTop;
     // this.connectContainerOffSetTop = this.connectContainer.nativeElement.offsetTop;
+  }
+
+  public onSubmit(form: NgForm): void {
+    this.submitted = true;
+    this.contactForm.reset();
   }
 
   // TODO create a fade in when in view component!

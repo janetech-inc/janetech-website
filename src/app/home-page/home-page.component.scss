@@ -1,212 +1,171 @@
 @import '../../styles.scss';
 @import url('https://fonts.googleapis.com/css?family=Nunito+Sans&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Lora&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Gothic+A1&display=swap');
 
-$logo-animation-transition-speed: 1s;
-$logo-sticky-width: 35%;
 $logo-width: 75%;
 
-@mixin animation-styles($name, $duration) {
-  -webkit-animation-name: $name; /* Safari 4.0 - 8.0 */
-  -webkit-animation-duration: $duration; 
-  animation-name: $name;
-  animation-duration: $duration; 
+.flex-container {
+  display: flex;
+  flex-direction: column;
 }
 
-@mixin animation-fade-in {
-  opacity: 1;
-  @include animation-styles(fade-in, $logo-animation-transition-speed);
-}
+.landing-img {
+  background-image: url(../../assets/images/background-v2.png);
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
 
-#background-video {
-  display: block; 
-  min-height: 100%; 
-  min-width: 100%; 
-  position: fixed; 
-  top: 0; 
-  left: 0; 
-  pointer-events: none;
-}
-
-.sticky {
-  opacity: 1;
-  position: fixed;
-  top: 37%;
-  width: 100%;
-  z-index: 1;
-
-  @include animation-styles(slide-logo-up-three-pixels, $logo-animation-transition-speed);
-
-  &.animate {
-    top: 3%;
-
-    @include animation-styles(slide-logo-up, $logo-animation-transition-speed);
+  .sticky {
+    opacity: 1;
+    top: 37%;
+    width: 100%;
+    z-index: 1;
   }
-}
-
-.sticky-img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: $logo-width;
-  opacity: 1;
-
-  @include animation-styles(fade-in, $logo-animation-transition-speed);
-
-  &.animate {
-    width: $logo-sticky-width;
-
-    @include animation-styles(shrink-logo, $logo-animation-transition-speed);
+  
+  .sticky-img {
+    display: block;
+    margin: auto;
+    width: $logo-width;
+    opacity: 1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: absolute;
   }
 }
 
 .section {
-  background-attachment: fixed;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 100vh;
-  position: relative;
+  background: #1b1b1b;
+  font-family: 'Lora', serif;
   text-align: center;
-  pointer-events: none;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
 
-  @media only screen and (max-width: 501px) {
-    
-    &.section:nth-child(4) {
-      height: 70vh;
-    }
-  
-    &.section:last-child {
-      height: 80vh;
-    }
-  }
+  // &.section:last-child {
+  //   padding: 50px 0;
+  // }
 
-  &.finished {
-    height: 30vh;
-  }
+  // @media only screen and (max-width: 501px) {
+  //   &.section:last-child {
+  //     height: auto;
+  //   }
+  // }
 }
 
-.overlay-container {
-  min-height: 80%;
-  pointer-events: none;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-}
-
-.container-content {
+.copy-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
   padding-right: 10%;
   padding-left: 10%;
   position: relative;
   z-index: 5;
-}
 
-.copy {
-  font-size: 5vw;
-  opacity: 0;
-
-  &.animate {
-    @include animation-fade-in();
-  }
-  @media only screen and (max-width: 501px) {
-    font-size: 6vw;
-  }
-}
-
-.connect {
-  padding-top: 15%;
-  color: rgb(80, 227, 194);
-  font-weight: 300;
-  font-size: 3vw;
-  opacity: 0;
-
-  @media only screen and (max-width: 501px) {
-    opacity: 1;
-    font-size: 4vw;
-  }
-
-  &.animate {
-    @include animation-fade-in();
-  }
-}
-
-.email {
-  font-weight: bold;
-  font-size: 9vw;
-  opacity: 0;
-  pointer-events: all;
-
-  @media only screen and (max-width: 501px) {
-    opacity: 1;
-  }
-
-  cursor: -webkit-grab; cursor: grab;
-
-  .hover-content {
-    font-size: 2vw;
-    font-weight: 500;
-    opacity: 0;
-    pointer-events: all;
-
+  .copy {
+    color: #ffffff;
+    font-size: 3vw;
+    
     @media only screen and (max-width: 501px) {
-      opacity: 1;
-      font-size: 3vw;
-    }
-  }
-
-  &.animate {
-    @include animation-fade-in();
-
-    &:hover {
-      .hover-content {
-        @include animation-fade-in();
-      }
-
-      @media only screen and (max-width: 501px) {
-        opacity: 1;
-      }
+      font-size: 6vw;
     }
   }
 }
 
-// --- Animations  --- //
-@-webkit-keyframes shrink-logo {
-  from { width: $logo-width; }
-  to { width: $logo-sticky-width; }
-}
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  font-family: 'Gothic A1', sans-serif;
+  width: 40%;
+  margin: 0 auto; 
+  overflow-x: hidden;
 
-@keyframes shrink-logo {
-  from {width: $logo-width;}
-  to { width: $logo-sticky-width;}
-}
+  @media only screen and (max-width: 1024px) {
+    width: 85%;
+  }
 
-@-webkit-keyframes fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
+  .form-header {
+    color: dimgray;
+    font-family: 'Gothic A1', sans-serif;
+    text-transform: uppercase;
+  }
 
-@keyframes fade-in {
-  from { opacity: 0; }
-  to { opacity: 1; }
-}
-
-@-webkit-keyframes slide-logo-up-three-pixels {
-  from { top: 40%; }
-  to { top: 37%; }
-}
-
-@keyframes slide-logo-up-three-pixels {
-  from { top: 40%; }
-  to { top: 37%; }
-}
-
-@-webkit-keyframes slide-logo-up {
-  to { top: 3%; }
-  from { top: 37%; }
-}
-
-@keyframes slide-logo-up {
-  to { top: 3%; }
-  from { top: 37%; }
+  .form-control {
+    font-size: 12px;
+    margin: 10px 0;
+  }
+  
+  textarea {
+    resize: none;
+    width: 100%;
+  }
+  
+  label {
+    color: lightgray;
+    float: left;
+    font-family: 'Lato', sans-serif;
+    font-size: 15px;
+    margin: 5px 0;
+  }
+  
+  input {
+    height: 30px;
+    width: 100%;
+  }
+  
+  button[type=submit] {
+    background: rebeccapurple;
+    border: none;
+    border-radius: 4px;
+    color: #ffffff;
+    cursor: pointer;
+    float: left;
+    font-family: 'Gothic A1', sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    height: 60px;
+    width: 30%;
+    margin-top: 20px;
+    
+    @media only screen and (max-width: 501px) {
+      height: 50px;
+      width: 50%;
+    }
+  }
+  
+  .error-msg {
+    color: red;
+    font-size: 12px;
+  }
+  
+  input.ng-invalid.ng-touched {
+    border: 1px solid red;
+  }
+  
+  ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    font-family: 'Gothic A1', sans-serif;
+    line-height: 12;
+    padding-left: 5px;
+  }
+  ::-moz-placeholder { /* Firefox 19+ */
+    font-family: 'Gothic A1', sans-serif;
+    line-height: 12;
+    padding-left: 5px;
+  }
+  :-ms-input-placeholder { /* IE 10+ */
+    font-family: 'Gothic A1', sans-serif;
+    line-height: 12;
+    padding-left: 5px;
+  }
+  :-moz-placeholder { /* Firefox 18- */
+    font-family: 'Gothic A1', sans-serif;
+    line-height: 12;
+    padding-left: 5px;
+  }
 }
