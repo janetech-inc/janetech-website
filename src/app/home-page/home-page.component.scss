@@ -42,16 +42,19 @@ $logo-width: 75%;
   background: #1b1b1b;
   font-family: 'Lora', serif;
   text-align: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
 
-  &.section:last-child {
-    padding: 50px 0;
-  }
+  // &.section:last-child {
+  //   padding: 50px 0;
+  // }
 
-  @media only screen and (max-width: 501px) {
-    &.section:last-child {
-      height: auto;
-    }
-  }
+  // @media only screen and (max-width: 501px) {
+  //   &.section:last-child {
+  //     height: auto;
+  //   }
+  // }
 }
 
 .copy-container {
